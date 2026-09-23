@@ -34,3 +34,6 @@ The following **additional** features are implemented:
 - [x] Each detail page changes the browser tab title to the place name.
 
 ## Video Walkthrough
+
+https://github.com/user-attachments/assets/dc88db3e-e62b-49c1-b2ec-69830c9f8da3
+
