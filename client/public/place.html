@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Unreal Earth</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.min.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Syne:wght@600;800&display=swap" />
+    <link rel="stylesheet" href="/style.css" />
+    <script type="module" src="/scripts/header.js" defer></script>
+    <script type="module" src="/scripts/place.js" defer></script>
+  </head>
+  <body class="night-page">
+    <header></header>
+    <main id="place-content" class="container place-info">
+      <img id="image" class="place-image" src="" alt="" />
+      <div class="place-details">
+        <h1 id="name"></h1>
+        <p id="tagline" class="tagline"></p>
+        <ul class="facts">
+          <li><span aria-hidden="true">📍</span> <strong>Country:</strong> <span id="country"></span></li>
+          <li><span aria-hidden="true">🏞️</span> <strong>Type:</strong> <span id="type"></span></li>
+          <li><span aria-hidden="true">📅</span> <strong>Best time to visit:</strong> <span id="bestTime"></span></li>
+        </ul>
+        <p id="description"></p>
+        <blockquote>
+          <strong>Fun fact:</strong> <span id="funFact"></span>
+        </blockquote>
+        <a href="/" role="button" class="secondary">Back to all places</a>
+      </div>
+    </main>
+  </body>
+</html>

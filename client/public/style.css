@@ -1,0 +1,235 @@
+/* Colors and fonts, on top of Picocss */
+:root[data-theme="dark"] {
+  --night: #0c1230;
+  --night-deep: #070b1f;
+  --starlight: #eef1ff;
+  --haze: #a3abd1;
+  --aurora: #7ef0d6;
+
+  --pico-background-color: var(--night);
+  --pico-color: var(--starlight);
+  --pico-muted-color: var(--haze);
+  --pico-primary: var(--aurora);
+  --pico-primary-hover: #b5f7e8;
+  --pico-primary-background: var(--aurora);
+  --pico-primary-hover-background: #b5f7e8;
+  --pico-primary-border: var(--aurora);
+  --pico-primary-hover-border: #b5f7e8;
+  --pico-primary-inverse: var(--night-deep);
+  --pico-primary-focus: rgba(126, 240, 214, 0.4);
+}
+
+body {
+  background-color: var(--night);
+}
+
+h1, h2, h3, .site-title {
+  font-family: "Syne", system-ui, sans-serif;
+  letter-spacing: -0.01em;
+}
+
+/* Landing screen */
+.hero {
+  position: sticky;
+  top: 0;
+  z-index: 0;
+  height: 100vh;
+  height: 100svh;
+  display: flex;
+  align-items: flex-end;
+  padding: 0 6vw 12vh;
+  background-image:
+    linear-gradient(to top, rgba(7, 11, 31, 0.85), rgba(7, 11, 31, 0) 60%),
+    url('/images/landing-page.jpg');
+  background-size: cover;
+  background-position: center;
+}
+
+.hero-text {
+  max-width: 40rem;
+}
+
+.hero h1 {
+  font-size: clamp(3.2rem, 11vw, 8rem);
+  font-weight: 800;
+  line-height: 0.9;
+  margin-bottom: 1rem;
+  color: var(--starlight);
+}
+
+.hero p {
+  font-size: 1.2rem;
+  color: var(--starlight);
+  margin-bottom: 1.5rem;
+}
+
+/* Cards section slides up over the landing screen */
+.places-section {
+  position: relative;
+  z-index: 1;
+  min-height: 100vh;
+  padding: 5rem 0;
+  background-color: var(--night);
+  background-image: url('/images/night-sky.jpg');
+  background-size: cover;
+  background-position: center;
+  box-shadow: 0 -30px 60px rgba(7, 11, 31, 0.8);
+}
+
+.places-section h2 {
+  font-size: clamp(2rem, 5vw, 3rem);
+  margin-bottom: 2.5rem;
+}
+
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(16rem, 1fr));
+  gap: 1.75rem;
+}
+
+.card {
+  position: relative;
+  margin: 0;
+  padding: 0;
+  aspect-ratio: 1 / 1;
+  overflow: hidden;
+  border-radius: 0.5rem;
+  background: var(--night-deep);
+}
+
+.card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.5s ease;
+}
+
+.card-info {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: 1.5rem;
+  background: rgba(7, 11, 31, 0.78);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.card:hover .card-info,
+.card:focus-within .card-info {
+  opacity: 1;
+}
+
+.card:hover img {
+  transform: scale(1.06);
+}
+
+.card-info h3 {
+  font-size: 1.5rem;
+  margin-bottom: 0.25rem;
+  color: var(--starlight);
+}
+
+.card-info .country {
+  color: var(--aurora);
+  margin-bottom: 0.5rem;
+}
+
+.card-info .card-tagline {
+  font-style: italic;
+  margin-bottom: 1.25rem;
+}
+
+.card-info a[role="button"] {
+  align-self: flex-start;
+}
+
+/* Phones and tablets have no hover, so show the info all the time */
+@media (hover: none) {
+  .card-info {
+    opacity: 1;
+    background: linear-gradient(to top, rgba(7, 11, 31, 0.92), rgba(7, 11, 31, 0) 75%);
+  }
+}
+
+/* Detail page and 404 page */
+.night-page {
+  min-height: 100vh;
+  background-image: url('/images/night-sky.jpg');
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+}
+
+.site-title {
+  font-size: 1.4rem;
+  font-weight: 800;
+  color: var(--starlight);
+  text-decoration: none;
+}
+
+.place-info {
+  padding-bottom: 4rem;
+}
+
+.place-image {
+  width: 100%;
+  max-height: 70vh;
+  object-fit: cover;
+  border-radius: 0.5rem;
+  margin: 1rem 0 2rem;
+}
+
+.place-details {
+  max-width: 44rem;
+}
+
+.place-details h1 {
+  font-size: clamp(2.4rem, 7vw, 4.5rem);
+  font-weight: 800;
+  line-height: 1;
+  margin-bottom: 0.5rem;
+}
+
+.tagline {
+  font-size: 1.25rem;
+  font-style: italic;
+  color: var(--aurora);
+  margin-bottom: 1.5rem;
+}
+
+.facts {
+  padding: 0;
+  margin-bottom: 1.5rem;
+}
+
+.facts li {
+  list-style: none;
+  margin-bottom: 0.5rem;
+}
+
+.place-details blockquote {
+  border-left-color: var(--aurora);
+  margin: 2rem 0;
+}
+
+.not-found {
+  text-align: center;
+  padding-top: 18vh;
+}
+
+.not-found h1 {
+  font-size: clamp(5rem, 20vw, 10rem);
+  font-weight: 800;
+  line-height: 1;
+  margin-bottom: 1rem;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .card img,
+  .card-info {
+    transition: none;
+  }
+}
