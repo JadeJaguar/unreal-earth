@@ -8,10 +8,6 @@ const __dirname = path.dirname(__filename)
 
 const router = express.Router()
 
-router.get('/', (req, res) => {
-  res.status(200).json(placeData)
-})
-
 router.get('/:slug', (req, res) => {
   const place = placeData.find(place => place.slug === req.params.slug)
 

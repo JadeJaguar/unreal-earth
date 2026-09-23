@@ -1,8 +1,24 @@
 const renderPlaces = async () => {
-  const response = await fetch('/places')
-  const data = await response.json()
-
   const mainContent = document.getElementById('main-content')
+
+  let data
+
+  try {
+    const response = await fetch('/api/places')
+
+    if (!response.ok) {
+      throw new Error(`Request failed with status ${response.status}`)
+    }
+
+    data = await response.json()
+  }
+  catch (error) {
+    console.error('Failed to load places:', error)
+    const errorMessage = document.createElement('h2')
+    errorMessage.textContent = 'Could not load places right now 😞'
+    mainContent.appendChild(errorMessage)
+    return
+  }
 
   if (data && data.length > 0) {
     data.map(place => {
