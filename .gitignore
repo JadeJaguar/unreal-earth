@@ -25,3 +25,5 @@ server/public
 *.njsproj
 *.sln
 *.sw?
+
+.env
