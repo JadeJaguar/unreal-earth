@@ -78,7 +78,19 @@ h1, h2, h3, .site-title {
 
 .places-section h2 {
   font-size: clamp(2rem, 5vw, 3rem);
-  margin-bottom: 2.5rem;
+  margin-bottom: 1.5rem;
+}
+
+/* Search box */
+.search-form {
+  max-width: 32rem;
+  margin-bottom: 0.5rem;
+}
+
+.search-message {
+  min-height: 1.5rem;
+  color: var(--haze);
+  margin-bottom: 1.5rem;
 }
 
 .card-grid {
