@@ -101,11 +101,4 @@ searchInput.addEventListener('input', () => {
   }
 })
 
-const requestedURL = window.location.pathname
-
-if (requestedURL !== '/' && requestedURL !== '/index.html') {
-  window.location.href = '/404.html'
-}
-else {
-  renderPlaces()
-}
+renderPlaces()

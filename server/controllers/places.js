@@ -32,7 +32,7 @@ const getPlaces = async (req, res) => {
 
     res.status(200).json(results.rows)
   } catch (error) {
-    res.status(409).json({ error: error.message })
+    res.status(500).json({ error: error.message })
   }
 }
 
@@ -49,7 +49,7 @@ const getPlace = async (req, res) => {
 
     res.status(200).json(results.rows[0])
   } catch (error) {
-    res.status(409).json({ error: error.message })
+    res.status(500).json({ error: error.message })
   }
 }
 
@@ -63,7 +63,7 @@ const getPlacePage = async (req, res) => {
 
     res.status(200).sendFile(path.resolve(__dirname, '../public/place.html'))
   } catch (error) {
-    res.status(409).json({ error: error.message })
+    res.status(500).json({ error: error.message })
   }
 }
 
