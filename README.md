@@ -34,3 +34,9 @@ The following **additional** features are implemented:
 - [x] The app is deployed live on Render at [unreal-earth.onrender.com](https://unreal-earth.onrender.com), with a custom build command that builds the client and serves it from the same Express server that talks to the database.
 
   ![Render web service showing the deploy is Live](docs/screenshots/render-deploy.png)
+
+## Video Walkthrough
+
+https://github.com/user-attachments/assets/166f7d20-388b-46d8-86a7-6bf1918356d0
+
+
